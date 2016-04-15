@@ -90,6 +90,8 @@
                   $animate.leave(modalElement)
                     .then(function () {
                       //  Resolve the 'closed' promise.
+                      if (!modalElement || !modalScope) 
+                        return;
                       closedDeferred.resolve(result);
 
                       //  We can now clean up the scope
